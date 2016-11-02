@@ -1,11 +1,3 @@
-A few things to check first:
+This is a very minor issue, but the background color for the Sort By dropdown (#order_by)in the Kata library is set to transparent which makes it somewhat difficult to read. The file path for the attribute is https://www.codewars.com/assets/application-342bfbe10d15856ba3a1885b2e768360.css. The background-color for the other dropdowns is #131414.
 
-Is the issue you are filing related to a specific kata?
-
-If so then please file an issue on the discourse page of the kata. You can do so by creating a comment and marking it as an issue. Only issues related to site functionality should be filed here.
-
-Is the issue you are filing related to how a specific language behaves when being executed?
-
-If so then it will likely be better to file the issue on our github.com/Codewars/codewars-runner-cli/issues repo, which is where we have our open source code execution functionality. You also may want to look into forking that repo and fixing the issue yourself if you have the means.
-
-Otherwise delete all of this text and file your issue. Make sure to include steps to reproduce the issue, including which pages/kata you found the issue on, and your Codewars username if its related to your account.
+Thanks
