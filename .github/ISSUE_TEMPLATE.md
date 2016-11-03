@@ -6,6 +6,6 @@ If so then please file an issue on the discourse page of the kata. You can do so
 
 Is the issue you are filing related to how a specific language behaves when being executed?
 
-If so then it will likely be better to file the issue on our github.com/Codewars/codewars-runner-cli/issues repo, which is where we have our open source code execution functionality. You also may want to look into forking that repo and fixing the issue yourself if you have the means.
+If so then it will likely be better to file the issue on our [github.com/Codewars/codewars-runner-cli/issues](https://github.com/Codewars/codewars-runner-cli/issues) repo, which is where we have our open source code execution functionality. You also may want to look into forking that repo and fixing the issue yourself if you have the means.
 
 Otherwise delete all of this text and file your issue. Make sure to include steps to reproduce the issue, including which pages/kata you found the issue on, and your Codewars username if its related to your account.
