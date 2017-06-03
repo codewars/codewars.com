@@ -1,0 +1,28 @@
+---
+title: ExUnit
+language: elixir
+
+basic_setup: |-
+  ```elixir
+  defmodule Adder do
+    def add(a, b), do: a + b
+  end
+  ```
+
+  ```elixir
+  defmodule TestAdder do
+    use ExUnit.Case
+    import Adder, only: [add: 2]
+    test "add(1, 1) == 2" do
+      assert add(1, 1) == 2
+    end
+  end
+  ```
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>Elixir code can be tested using <a href="https://hexdocs.pm/ex_unit/ExUnit.html">ExUnit</a>.</p>
+
+<h2>Basic Setup</h2>
+{{ page.basic_setup | markdownify }}
