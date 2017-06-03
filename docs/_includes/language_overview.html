@@ -25,7 +25,7 @@
   <dt>Packages</dt>
   {% if page.packages.size > 0 %}
     <dd class="multi-column-list-container">
-      <ul>{% for p in page.packages %}<li>{{ p }}</li>{% endfor %}</ul>
+      <ul>{% for p in page.packages %}<li>{{ p }} <!-- HACK append space to make this searchable --></li>{% endfor %}</ul>
     </dd>
   {% else %}
     <dd>None</dd>
