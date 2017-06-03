@@ -3,19 +3,11 @@
 {% include head.html %}
 
 <body>
-	<header>
-		<nav class="pt1">
-			<ol class="list">
-        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
-				<span>/</span>
-				<li class="dib"><a href="{{ '/cookbook' | relative_url }}">Cookbook</a></li>
-			</ol>
-		</nav>
-	</header>
+  {% include top_navigation.html %}
 
-	<main class="center">
+  <main class="pt4 pt0-l ph1 center">
     {{ content }}
-	</main>
+  </main>
 
   {% include footer.html %}
 </body>
