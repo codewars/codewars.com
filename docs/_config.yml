@@ -34,9 +34,6 @@ collections:
   recipes:
     output: true
     permalink: /cookbook/:path/
-  json:
-    output: true
-    permalink: /:collection/:path
 
 defaults:
   - scope:

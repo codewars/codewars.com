@@ -1,5 +1,5 @@
 ---
-permalink: /json/data.json
+permalink: /assets/data.json
 ---
 [{% assign cs = site.collections | where_exp: "c", "c.label != 'json'" %}{% assign id = -1 %}
 {% for c in cs %}{% unless c.docs.size == 0 %}{% for d in c.docs %}{% assign id = id | plus: 1 %}
