@@ -1,0 +1,54 @@
+# placeholders are commented out to avoid questions
+---
+# Overall Rank Progress
+- {reason: Reached 7 kyu, points:   20}
+- {reason: Reached 6 kyu, points:   30}
+- {reason: Reached 5 kyu, points:   45}
+- {reason: Reached 4 kyu, points:   70}
+- {reason: Reached 3 kyu, points:  100}
+- {reason: Reached 2 kyu, points:  150}
+- {reason: Reached 1 kyu, points:  225}
+- {reason: Reached 1 dan, points:  450}
+
+# Completing Kata
+- {reason: Completed Kata (White),  points:    2}
+- {reason: Completed Kata (Yellow), points:    8}
+- {reason: Completed Kata (Blue),   points:   32}
+- {reason: Completed Kata (Purple), points:  128}
+#- {reason: Completed Kata (Black),  points:  512} # Placeholder
+
+
+# Community Contributions
+# Authoring
+- {reason: Published Kata,                   points:    3}
+- {reason: Published Kata Approved (White),  points:    3}
+- {reason: Published Kata Approved (Yellow), points:   15}
+- {reason: Published Kata Approved (Blue),   points:   75}
+- {reason: Published Kata Approved (Purple), points:  375}
+#- {reason: Published Kata Approved (Black),  points: 1875} # Placeholder
+
+# Translating
+- {reason: Published Translation Approved (White),  points:    4}
+- {reason: Published Translation Approved (Yellow), points:   16}
+- {reason: Published Translation Approved (Blue),   points:   64}
+- {reason: Published Translation Approved (Purple), points:  256}
+
+# Feedbacks and Beta Process Contributions
+#- {reason: Completed Kata First,    points: 5} # not implemented
+- {reason: Completed Kata (Beta),   points: 2}
+- {reason: Assessed Kata Rank,      points: 1}
+- {reason: Voted Kata Satisfaction, points: 1}
+
+# Kumite
+- {reason: Published Kumite,      points: 2}
+- {reason: Kumite Fork Published, points: 1}
+
+# Upvotes
+- {reason: Authored Kata Upvoted, points: 2}
+- {reason: Comment Upvoted,       points: 1}
+- {reason: Solution Upvoted,      points: 1}
+
+# Misc.
+- {reason: Referral Signup (first 5), points: 3}
+- {reason: Referall Signup (6+),      points: 1}
+- {reason: Github Account Added,      points: 1}

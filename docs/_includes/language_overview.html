@@ -1,0 +1,38 @@
+<style>
+  .multi-column-list-container {
+    -moz-column-width: 10rem;
+    -webkit-column-width: 10rem;
+    column-width: 10rem;
+  }
+  .multi-column-list-container ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .multi-column-list-container ul li:first-child {
+    margin-top: 0;
+  }
+</style>
+
+<dl class="language-overview">
+  <dt>Versions</dt>{% for v in page.versions %}<dd>{{ v }}</dd>{% endfor %}
+
+  <dt>Test Frameworks</dt>
+  {% for x in page.tests %}<dd>{{ x }}</dd>{% else %}<dd>No Test Integration</dd>{% endfor %}
+
+  {% if page.timeout %}<dt>Timeout</dt><dd>{{ page.timeout }}</dd>{% endif %}
+
+  <dt>Packages</dt>
+  {% if page.packages.size > 0 %}
+    <dd class="multi-column-list-container">
+      <ul>{% for p in page.packages %}<li>{{ p }}</li>{% endfor %}</ul>
+    </dd>
+  {% else %}
+    <dd>None</dd>
+  {% endif %}
+
+  <dt>Services</dt>
+  {% for x in page.services %}<dd>{{ x }}</dd>{% else %}<dd>None</dd>{% endfor %}
+
+  {% if page.docker_image %}<dt>Docker Image</dt><dd>{{ page.docker_image }}</dd>{% endif %}
+</dl>

@@ -1,0 +1,371 @@
+// <https://github.com/balzss/luxbar> (MIT License)
+
+$luxbar-height: 58px;
+$luxbar-breakpoint: 48em;
+$luxbar-padding: 18px 24px 18px 24px;
+$luxbar-transition: .6s ease;
+$hamburger-line-height: 2px;
+$hamburger-width: 26px;
+$luxbar-shadow: 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24);
+$luxbar-css-prefix: 'luxbar' !default;
+
+.#{$luxbar-css-prefix}-default {
+  width: 100%;
+  position: relative;
+  box-shadow: $luxbar-shadow;
+  z-index: 1000;
+}
+
+.#{$luxbar-css-prefix}-static {
+  box-shadow: $luxbar-shadow;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .#{$luxbar-css-prefix}-checkbox {
+    &:checked ~.#{$luxbar-css-prefix}-menu {
+      position: absolute;
+    }
+  }
+}
+
+.#{$luxbar-css-prefix}-fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: $luxbar-shadow;
+}
+
+.#{$luxbar-css-prefix}-fixed-bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: $luxbar-shadow;
+}
+
+
+%general-hamburger-span {
+  display: block;
+  height: $hamburger-line-height;
+  width: $hamburger-width;
+  transition: $luxbar-transition;
+}
+
+%hamburger-lines {
+  span {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      margin-top: 0;
+    }
+  }
+}
+
+.#{$luxbar-css-prefix}-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: $luxbar-height;
+}
+
+.#{$luxbar-css-prefix}-menu-left {
+  .#{$luxbar-css-prefix}-navigation,
+  .#{$luxbar-css-prefix}-header {
+    justify-content: flex-start;
+  }
+}
+
+.#{$luxbar-css-prefix}-menu-right {
+  .#{$luxbar-css-prefix}-hamburger {
+    margin-left: auto;
+  }
+}
+
+.#{$luxbar-css-prefix}-brand {
+  font-size: 1.6em;
+  padding: $luxbar-padding;
+}
+
+.#{$luxbar-css-prefix}-menu {
+  min-height: $luxbar-height;
+  transition: $luxbar-transition;
+  width: 100%;
+}
+
+.#{$luxbar-css-prefix}-navigation {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.#{$luxbar-css-prefix}-menu,
+.#{$luxbar-css-prefix}-item {
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.#{$luxbar-css-prefix}-item {
+  height: $luxbar-height;
+
+  a {
+    padding: $luxbar-padding;
+    display: block;
+  }
+}
+
+.#{$luxbar-css-prefix}-hamburger {
+  padding: $luxbar-padding;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    @extend %general-hamburger-span;
+
+    &::before,
+    &::after {
+      @extend %general-hamburger-span;
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      margin-top: -8px;
+    }
+
+    &::after {
+      margin-top: 8px;
+    }
+  }
+}
+
+.#{$luxbar-css-prefix}-checkbox {
+  display: none;
+
+  &:not(:checked) ~.#{$luxbar-css-prefix}-menu {
+    overflow: hidden;
+    height: $luxbar-height;
+  }
+
+  &:checked ~.#{$luxbar-css-prefix}-menu {
+    transition: height $luxbar-transition;
+    height: 100vh;
+    overflow: auto;
+
+    li {
+      .#{$luxbar-css-prefix}-hamburger {
+        @extend %hamburger-lines;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  height: auto;
+  min-height: $luxbar-height;
+
+  &:hover > ul {
+    position: relative;
+    display: block;
+    min-width: 100%;
+  }
+
+  > a {
+    &::after {
+      $expand-arrow-height: 5px;
+
+      position: absolute;
+      content: '';
+      right: 10px;
+      top: $luxbar-height / 2 - $expand-arrow-height + 1px;
+      border-width: $expand-arrow-height $expand-arrow-height 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  > ul {
+    display: block;
+    overflow-x: hidden;
+    list-style: none;
+    padding: 0;
+
+    .#{$luxbar-css-prefix}-item {
+      min-width: 100%;
+      height: $luxbar-height / 2;
+      padding: 5px 10px 5px 40px;
+
+      a {
+        min-height: $luxbar-height / 2;
+        line-height: $luxbar-height / 2;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $luxbar-breakpoint) {
+  .#{$luxbar-css-prefix}-navigation {
+    flex-flow: row;
+    justify-content: flex-end;
+  }
+
+  .#{$luxbar-css-prefix}-hamburger {
+    display: none;
+  }
+
+  .#{$luxbar-css-prefix}-checkbox {
+    &:not(:checked) ~.#{$luxbar-css-prefix}-menu {
+      overflow: visible;
+    }
+
+    &:checked ~.#{$luxbar-css-prefix}-menu {
+      height: $luxbar-height;
+    }
+  }
+
+  .#{$luxbar-css-prefix}-menu {
+    .#{$luxbar-css-prefix}-item {
+      border-top: 0;
+    }
+
+  }
+
+  .#{$luxbar-css-prefix}-menu-right .#{$luxbar-css-prefix}-header {
+    margin-right: auto;
+  }
+
+  .dropdown {
+    height: $luxbar-height;
+
+    &:hover > ul {
+      position: absolute;
+      left: 0;
+      top: $luxbar-height;
+      padding: 0;
+    }
+
+    > ul {
+      display: none;
+
+      .#{$luxbar-css-prefix}-item {
+        padding: 5px 10px;
+
+        a {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.#{$luxbar-css-prefix}-checkbox {
+  &:checked {
+    + .#{$luxbar-css-prefix}-menu {
+      .#{$luxbar-css-prefix}-hamburger-doublespin {
+        span {
+          &::before {
+            transform: rotate(225deg);
+          }
+
+          &::after {
+            transform: rotate(-225deg);
+          }
+        }
+      }
+
+      .#{$luxbar-css-prefix}-hamburger-spin {
+        span {
+          &::before {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+$dark-bg: #212121;
+$dark-hl: #424242;
+$dark-fg: #fff;
+
+.#{$luxbar-css-prefix}-menu-dark,
+.#{$luxbar-css-prefix}-menu-dark .dropdown ul {
+  background-color: $dark-bg;
+  color: $dark-fg;
+}
+
+.#{$luxbar-css-prefix}-menu-dark {
+  .active,
+  .#{$luxbar-css-prefix}-item:hover {
+    background-color: $dark-hl;
+  }
+
+  .#{$luxbar-css-prefix}-hamburger {
+    span,
+    span::before,
+    span::after {
+      background-color: $dark-fg;
+    }
+  }
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.#{$luxbar-css-prefix}-menu-cw,
+.#{$luxbar-css-prefix}-menu-cw .dropdown ul {
+  background-color: #222;
+  color: #999;
+}
+
+.#{$luxbar-css-prefix}-menu-cw .active,
+.#{$luxbar-css-prefix}-menu-cw .#{$luxbar-css-prefix}-item:hover {
+  background-color: #434343;
+}
+
+.#{$luxbar-css-prefix}-menu-cw .#{$luxbar-css-prefix}-hamburger span,
+.#{$luxbar-css-prefix}-menu-cw .#{$luxbar-css-prefix}-hamburger span::before,
+.#{$luxbar-css-prefix}-menu-cw .#{$luxbar-css-prefix}-hamburger span::after {
+  background-color: #999;
+}
+
+
+// Copyright (c) 2017 Balazs Saros
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.

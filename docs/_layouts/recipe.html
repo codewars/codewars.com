@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+	<header>
+		<nav class="pt1">
+			<ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+				<span>/</span>
+				<li class="dib"><a href="{{ '/cookbook' | relative_url }}">Cookbook</a></li>
+			</ol>
+		</nav>
+	</header>
+
+	<main class="center">
+    {{ content }}
+	</main>
+
+  {% include footer.html %}
+</body>
+</html>

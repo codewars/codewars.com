@@ -1,0 +1,4 @@
+baseurl: ''
+
+sass:
+  style: expanded

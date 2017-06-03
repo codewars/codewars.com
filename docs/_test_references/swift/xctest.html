@@ -1,0 +1,87 @@
+---
+title: XCTest
+language: swift
+
+basic_setup: |-
+  ```swift
+  import XCTest
+
+  class SimpleTest: XCTestCase {
+      static var allTests = [
+          ("testAdd", testAdd),
+      ]
+      func testAdd() {
+          XCTAssertEqual(add(1, 1), 2)
+      }
+  }
+
+  XCTMain([
+      testCase(SimpleTest.allTests),
+  ])
+  ```
+
+assertions:
+  - name: 'XCTFail(_:file:line:)'
+    id: xct-fail
+    desc: Generates a failure immediately and unconditionally.
+  - name: 'XCTAssert(_:_:file:line:)'
+    id: xct-assert
+    desc: Asserts that an expression is `true`.
+  - name: 'XCTAssertTrue(_:_:file:line:)'
+    id: xct-assert-true
+    desc: Asserts that an expression is `true`.
+  - name: 'XCTAssertFalse(_:_:file:line:)'
+    id: xct-assert-false
+    desc: Asserts that an expression is `false`.
+  - name: 'XCTAssertNil(_:_:file:line:)'
+    id: xct-assert-nil
+    desc: Asserts that an expression is `nil`.
+  - name: 'XCTAssertNotNil(_:_:file:line:)'
+    id: xct-assert-not-nil
+    desc: Asserts that an expression is not `nil`.
+  - name: 'XCTAssertEqual(_:_:_:file:line:)'
+    id: xct-assert-equal
+    desc: |-
+      Generic function:
+      - Asserts that two values of the same type are equal.
+      - Asserts that two `Array` instances are equal.
+      - Asserts that two `ArraySlice` instances are equal.
+      - Asserts that two `ContiguousArray` instances are equal.
+      - Asserts that two `Dictionary` instances are equal.
+  - name: 'XCTAssertNotEqual(_:_:_:file:line:)'
+    id: xct-assert-not-equal
+    desc: |-
+      Generic function:
+      - Asserts that two values of the same type are not equal.
+      - Asserts that two `Array` instances are not equal.
+      - Asserts that two `ArraySlice` instances are not equal.
+      - Asserts that two `ContiguousArray` instances are not equal.
+      - Asserts that two `Dictionary` instances are not equal.
+  - name: 'XCTAssertEqualWithAccuracy(_:_:accuracy:_:file:line:)'
+    id: xct-assert-equal-with-accuracy
+    desc: Asserts that two values of the same type are equal within a certain accuracy.
+  - name: 'XCTAssertNotEqualWithAccuracy(_:_:_:_:file:line:)'
+    id: xct-assert-not-equal-with-accuracy
+    desc: Asserts that two values of the same type are not equal within a certain accuracy.
+  - name: 'XCTAssertThrowsError(_:_:file:line:_:)'
+    id: xct-assert-throws-error
+    desc: Asserts that an expression throws an error.
+---
+
+<h1>{{ page.title }}</h1>
+<p>
+  <a href="https://developer.apple.com/reference/xctest">XCTest</a> can be used to test Swift code.
+</p>
+
+<h2>Basic Setup</h2>
+{{ page.basic_setup | markdownify }}
+
+<h2>Assertions</h2>{% comment %}TODO{% endcomment %}
+<p>See <a href="https://developer.apple.com/reference/xctest#symbols">XCTest Reference</a></p>
+
+{% comment %}
+
+- <https://www.qualified.io/kb/languages/swift/xctest>
+- <https://github.com/apple/swift-corelibs-xctest/blob/master/Documentation/Linux.md>
+
+{% endcomment %}

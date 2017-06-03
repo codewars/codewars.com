@@ -1,0 +1,39 @@
+---
+title: References
+permalink: /references/
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% include top_navigation.html %}
+
+  <main class="center pt4 pt0-l">
+    <ul>
+      <li><a href="{{ '/api' | relative_url }}" title="Codewars API">API</a></li>
+      <li><a href="{{ '/languages' | relative_url }}" title="Supported Languages">Languages</a></li>
+
+      {% for t in site.references %}
+        <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+      {% endfor %}
+
+      {% assign gs = site.test_references | group_by: 'language' %}
+      {% for g in gs %}
+        <li>
+          {% assign p = site.languages | where: 'language', g.name | first %}
+          <a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a>
+          <ul>
+            {% for r in g.items %}
+              <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
