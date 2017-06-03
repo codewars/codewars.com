@@ -2,6 +2,9 @@
 title: busted
 language: lua
 
+intro: |-
+  [busted](https://olivinelabs.com/busted/) can be used to test Lua code.
+
 basic_setup: |-
   ```lua
   local t = {}
@@ -21,10 +24,9 @@ basic_setup: |-
   ```
 ---
 
-# {{ page.title }}
+<h1>{{ page.title }}</h1>
+{{ page.intro | markdownify }}
 
-[busted](https://olivinelabs.com/busted/) can be used to test Lua code.
 
-## Basic Setup
-
+<h2>Basic Setup</h2>
 {{ page.basic_setup | markdownify }}

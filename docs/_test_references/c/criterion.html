@@ -2,6 +2,10 @@
 title: Criterion
 language: c
 
+intro: |-
+  [Criterion](https://github.com/Snaipe/Criterion) can be used to test C code.
+  See the [documentation](https://criterion.readthedocs.io/en/master/) to learn more.
+
 basic_setup: |-
   ```c
   int add(int a, int b) {
@@ -21,18 +25,8 @@ basic_setup: |-
 
 ---
 
-# {{ page.title }}
+<h1>{{ page.title }}</h1>
+{{ page.intro | markdownify }}
 
-[Criterion](https://github.com/Snaipe/Criterion) can be used to test C code.
-See the [documentation](https://criterion.readthedocs.io/en/master/) to learn more.
-
-## Basic Setup
-
+<h2>Basic Setup</h2>
 {{ page.basic_setup | markdownify }}
-
-
-{% comment %}
-
-- <https://www.qualified.io/kb/languages/c/criterion>
-
-{% endcomment %}

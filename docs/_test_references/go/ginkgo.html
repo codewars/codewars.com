@@ -2,6 +2,11 @@
 title: Ginkgo
 language: go
 
+intro: |-
+  BDD testing framework [Ginkgo](http://onsi.github.io/ginkgo/)
+  with [Gomega](http://onsi.github.io/gomega/) matcher library
+  can be used to test Go code.
+
 basic_setup: |-
   ```go
   package kata
@@ -30,22 +35,21 @@ basic_setup: |-
   Package name (`kata` in above example) can be arbitrary (`[a-z][a-z\d]*`) and
   the import path is `codewarrior/{package name}`.
 
+matchers_desc: |-
+  [Gomega](http://onsi.github.io/gomega/) matcher library is supported.
+
+  - [Provided Matchers](http://onsi.github.io/gomega/#provided-matchers)
+  - [Custom Matchers](https://onsi.github.io/gomega/#adding-your-own-matchers)
+
 ---
 
-# {{ page.title }}
-
-BDD testing framework [Ginkgo](http://onsi.github.io/ginkgo/)
-with [Gomega](http://onsi.github.io/gomega/) matcher library
-can be used to test Go code.
+<h1>{{ page.title }}</h1>
+{{ page.intro | markdownify }}
 
 
-## Basic Setup
-
+<h2>Basic Setup</h2>
 {{ page.basic_setup | markdownify }}
 
-## Matchers
 
-[Gomega](http://onsi.github.io/gomega/) matcher library is supported.
-
-- [Provided Matchers](http://onsi.github.io/gomega/#provided-matchers)
-- [Custom Matchers](https://onsi.github.io/gomega/#adding-your-own-matchers)
+<h2>Matchers</h2>
+{{ page.matchers_desc | markdownify }}
