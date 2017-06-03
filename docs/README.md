@@ -7,6 +7,7 @@
   - [references](#references)
   - [tutorials](#tutorials)
   - [infos](#infos)
+  - [recipes](#recipes)
 - [Development](#development)
 - [Known Issues](#known-issues)
 - [TODO](#todo)
@@ -75,6 +76,13 @@ See [_tutorials/README.md](_tutorials/README.md) for details.
 Collections of general information about Codewars platform.
 
 See [_infos/README.md](_infos/README.md) for details.
+
+
+### `recipes`
+
+Collection of copy and paste-able solutions to common problems.
+
+See [_recipes/README.md](_recipes/README.md) for details.
 
 
 ## Development
