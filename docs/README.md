@@ -10,7 +10,6 @@
   - [recipes](#recipes)
 - [Development](#development)
 - [Known Issues](#known-issues)
-- [TODO](#todo)
 
 ## Introduction
 
@@ -20,7 +19,7 @@ Main goals are to:
 
 - Make contents easy to contribute
 - Keep maintenance cost low
-- Define structural standards
+- Define the structure and organize information
 
 ### Ease of Contribution
 
@@ -37,9 +36,10 @@ This setup does not require any external tools or build step.
 
 Use of templates, data files, and YAML front matter reduces the cost of keeping information up to date.
 
-### Structural Standards
+### Structure
 
 Documentations are organized by topic and target audience.
+Each document should be simple and focused.
 
 
 ## Collections
@@ -108,10 +108,10 @@ docker run --rm --label=jekyll \
 
 ## TODO
 
+- License
 - Reduce complexity
 - Cleanup messy markups/hacks
 - Contribution guide
-- License
 - Improve documentation
 - Consider setting up CI for PR
 - Styling
@@ -120,11 +120,11 @@ docker run --rm --label=jekyll \
   - Responsive
   - Assets
 - Navigation
+  - Search
   - Obvious
   - Simple
   - Consistent
-  - Add links to Codewars/GitHub/Gitter
-
+- Add links to Codewars/GitHub/Gitter
 - Document trade-offs, issues and reasons behind some decisions
 
 ## Known Issues
