@@ -1,0 +1,54 @@
+---
+title: PHPUnit
+language: php
+
+intro: |-
+  Codewars supports [PHPUnit](https://phpunit.de/).
+  See the [manual](https://phpunit.de/manual/5.7/en/index.html) to learn more.
+
+basic_setup: |-
+  ```php?start_inline=true
+  function add($a, $b) {
+    return $a + $b;
+  }
+  ```
+
+  ```php?start_inline=true
+  class AddFunction extends TestCase {
+    public function testAdd() {
+      $this->assertEquals(2, add(1, 1), "add(1, 1) == 2");
+    }
+  }
+  ```
+
+  Note that PHP tags (`<?php`, `?>`) and `use phpunit\framework\TestCase;` are
+  automatically inserted in the process of concatenation.
+
+  ```php
+  <?php
+  use phpunit\framework\TestCase;
+
+  function add($a, $b) {
+    return $a + $b;
+  }
+
+  class AddFunction extends TestCase {
+    public function testAdd() {
+      $this->assertEquals(2, add(1, 1), "add(1, 1) == 2");
+    }
+  }
+  ?>
+  ```
+---
+
+<h1>{{ page.title }}</h1>
+{{ page.intro | markdownify }}
+
+
+<h2>Basic Setup</h2>
+{{ page.basic_setup | markdownify }}
+
+
+{% comment %}
+TODO Add a list of commonly used assertion methods
+{% endcomment %}
