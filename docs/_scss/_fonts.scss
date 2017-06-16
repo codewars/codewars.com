@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/camingo-code-regular.woff2') format('woff2'),
+       url('../fonts/camingo-code-regular.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/camingo-code-italic.woff2') format('woff2'),
+       url('../fonts/camingo-code-italic.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/camingo-code-bold.woff2') format('woff2'),
+       url('../fonts/camingo-code-bold.woff')  format('woff');
+}

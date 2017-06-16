@@ -1,0 +1,38 @@
+---
+title: Languages
+permalink: /languages/
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% include top_navigation.html %}
+
+  <main class="center pt4 pt0-l">
+    <table class="center collapse w-100 w-80-ns">
+      <thead>
+        <tr>
+          <th class="pa2 tl">Language</th>
+          <th class="pa2 tl">Version</th>
+          <th class="pa2 tl">Test Framework</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% assign langs = site.languages | sort 'language' %}
+      {% for p in langs %}
+        <tr class="stripe-dark">
+          <td class="pa2"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>
+          <td class="pa2">{{ p.versions | join: '<br>' }}</td>
+          <td class="pa2">{{ p.tests | join: '<br>' }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

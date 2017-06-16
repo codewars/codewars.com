@@ -1,0 +1,41 @@
+---
+permalink: /index.html
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% include top_navigation.html %}
+
+  <div class="pt5 pt4-ns w-100 dt center">
+    <div class="v-mid dtc tc">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Codewars">
+      <p>Achieve code mastery through challenge</p>
+    </div>
+  </div>
+
+  <div class="flex flex-row flex-wrap items-center content-around justify-center">
+    {% assign langs = site.languages | sort 'language' %}
+    {% for x in langs %}
+    <div>
+      <a class="w3 no-underline silver bg-animate bg-222 hover-bg-dark-gray inline-flex items-center ma2 tc br2 pa2"
+        href="{{ x.url | relative_url }}"
+        title="{{ x.title }}"><i class="f2 pa2 lh-solid icon-lang-{{ x.language }}"></i></a>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+</body>
+</html>
+
+
+{% comment %}
+
+TODO
+
+- Think about navigation. Currently uses CSS only solution because it was convenient while prototyping.
+
+{% endcomment %}

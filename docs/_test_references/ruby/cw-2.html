@@ -1,0 +1,174 @@
+---
+title: Codewars Testing Framework
+language: ruby
+
+
+intro: |-
+  The `Test` class provides the testing functionality needed to validate a kata's requirements.
+  It is a frozen singleton class and cannot be modified.
+
+
+basic_setup: |-
+  ```ruby
+  def add(a, b)
+    a + b
+  end
+  ```
+
+  ```ruby
+  describe "simple tests" do
+    it "should add" do
+      Test.assert_equals(add(1, 1), 2, "Failed on add(1, 1)")
+    end
+  end
+  ```
+
+
+assertions:
+  - name: 'Test.assert_equals(actual, expected, msg = nil)'
+    id: assert-equals
+    desc: |-
+      Checks that the actual value equals the expected value.
+      A useful message will be displayed for both pass and fail outcomes.
+
+      The `msg` argument is optional.
+      If given it will be displayed in addition to the typical message used.
+
+  - name: 'Test.assert_not_equals(actual, unexpected, msg = nil)'
+    id: assert-not-equals
+    desc: |-
+      Checks that the actual value does not equal the unexpected value.
+      A useful message will be displayed for both pass and fail outcomes.
+
+      The `msg` argument is optional.
+      If given it will be displayed in addition to the typical message used.
+
+  - name: 'Test.expect_error(msg, &block)'
+    id: expect-error
+    desc: |-
+      Useful for testing that an error was expected to happen.
+
+      The `msg` is optional but best practice is to provide one.
+
+  - name: 'Test.expect_no_error(msg, &block)'
+    id: expect-no-error
+    desc: |-
+      Useful for testing that an error was not expected to happen.
+
+      The `msg` is optional but best practice is to provide one.
+
+  - name: 'Test.expect(passed, msg = nil)'
+    id: expect
+    desc: |-
+      Core assertion method that all other methods build off of.
+
+      The `msg` argument is optional.
+      If it is not provided then a generic message will be used.
+      Best practice is to provide your own message.
+      Pass/Fail status will be written to the output stream.
+
+      
+spec_methods:
+  - name: 'Test.describe(msg, &block)'
+    id: describe
+    desc: |-
+      Top level method for describing/grouping a set of tests.
+      Globally aliased as `describe`.
+
+      ```ruby
+      describe "Foo" do
+
+      end
+
+      # or
+
+      Test.describe "Foo" do
+
+      end
+      ```
+
+  - name: 'Test.it(msg, &block)'
+    id: it
+    desc: |-
+      Used in conjunction with describe to group related sets of tests in a spec.
+      Globally aliased as `it`.
+
+      ```ruby
+      describe "Foo" do
+        it "should be defined" do
+          Test.expect(defined?(Foo), "Foo is not defined")
+        end
+      end
+      ```
+
+  - name: 'Test.before(&block)'
+    id: before
+    desc: |-
+      Any blocks sent to this method will be called before each `it` spec is ran.
+
+      ```ruby
+      # this is a contrived example
+      describe "Foo" do
+        a = 0
+
+        # called before each spec is ran
+        before do
+          a++
+        end
+
+        it "should should do something" do
+          Test.assert_equals(a, 1)
+        end
+
+        it "should do something else" do
+          Test.assert_equals(a, 2)
+        end
+      end
+      ```
+
+
+helpers:
+  - name: 'Test.random_number()'
+    id: random-number
+    desc: Returns a random number.
+
+  - name: 'Test.random_token()'
+    id: random-token
+    desc: Returns a random string.
+---
+
+<h1>{{ page.title }}</h1>
+{{ page.intro | markdownify }}
+
+
+<h2>Basic Setup</h2>
+{{ page.basic_setup | markdownify }}
+
+
+<h2>Assertions</h2>
+<dl>
+{% for a in page.assertions %}
+  <dt id="{{ a.id }}"><code>{{ a.name }}</code></dt><dd>{{ a.desc | markdownify }}</dd>
+{% endfor %}
+</dl>
+
+
+<h2>Spec Methods</h2>
+<dl>
+{% for a in page.spec_methods %}
+  <dt id="{{ a.id }}"><code>{{ a.name }}</code></dt><dd>{{ a.desc | markdownify }}</dd>
+{% endfor %}
+</dl>
+
+
+<h2>Helpers</h2>
+<dl>
+{% for a in page.helpers %}
+  <dt id="{{ a.id }}"><code>{{ a.name }}</code></dt><dd>{{ a.desc | markdownify }}</dd>
+{% endfor %}
+</dl>
+
+
+{% comment %}
+TODO improve descriptions
+{% endcomment %}

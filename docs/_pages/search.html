@@ -1,0 +1,46 @@
+---
+layout: default
+data_json: /assets/data.json
+permalink: /search/
+---
+
+<form class="bg-222 mw7 center pa4 br2-ns ba b--black-10" action="{{ page.url | relative_url }}" method="get">
+  <div class="cf">
+    <input class="f6 f5-l input-reset bn fl black bg-light-silver pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="" type="text" name="q" value="" id="search-input">
+    <input class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black silver pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="submit" value="Search">
+  </div>
+</form>
+
+<div id="search-results"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.0.1/lunr.min.js"></script>
+<script>
+  // <https://lunrjs.com/guides/searching.html>
+  (function() {
+    const search = window.location.search;
+    if (!search) return;
+    const $input = document.getElementById('search-input');
+    const $results = document.getElementById('search-results');
+    $results.innerHTML = 'Searching...';
+    const ps = new URLSearchParams(search.substring(1));
+    const q = decodeURIComponent(ps.get('q').replace(/\+/g, '%20'));
+    $input.value = q;
+    fetch("{{ page.data_json | relative_url }}")
+    .then(o => o.json())
+    .then(os => {
+      const idx = lunr(function() {
+        this.ref('id');
+        this.field('title', {boost: 10}); // term in title has more impact
+        this.field('content');
+        this.field('collection');
+        this.field('url');
+        for (const o of os) this.add(o);
+      });
+      $results.innerHTML = idx.search(q).map(r => {
+        const d = os[r.ref];
+        console.log(r); console.log(d);
+        return `<p><a href="${d.url}">${d.title}</a></p>`;
+      }).join('');
+    });
+  })();
+</script>

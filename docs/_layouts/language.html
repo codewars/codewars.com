@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+  {% include top_navigation.html %}
+
+  <main class="pt4 pt0-l ph2 center mw7">
+    <h1>{{ page.title }}</h1>
+    {% unless page.no_overview %}{% include language_overview.html %}{% endunless %}
+
+    {% assign text = content | strip %}
+    {% unless text == '' %}<div>{{ text | markdownify }}</div>{% endunless %}
+
+    {% assign test_refs = site.test_references | where: 'language', page.language %}
+    {% unless test_refs.size == 0 %}
+      <h2 class="mv0">Test References</h2>
+      <ul>
+        {% for t in test_refs %}
+          <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endunless %}
+
+    {% capture exp %}r.languages contains '{{ page.language }}'{% endcapture %}
+    {% assign recipes = site.recipes | where_exp: 'r', exp %}
+    {% unless recipes.size == 0 %}
+      <h2 class="mv0">Cookbook</h2>
+      {% assign gs = recipes | group_by: 'chapter' %}
+      {% for g in gs %}
+        <h3 class="mv0">{{ g.name }}</h2>
+        <ul>
+          {% assign rs = g.items | sort: 'number' %}
+          {% for r in rs %}
+            <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% endunless %}
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
