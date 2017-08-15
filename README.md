@@ -10,3 +10,8 @@ A public repository for codewars.com, where issues can be tracked and wiki docum
 If the issue is related specifically to the execution of code (Test Frameworks, test output, etc) then a better place to log would be within the [Codewars Runner CLI repository](https://github.com/Codewars/codewars-runner-cli/issues). 
 
 If you are looking to express an interest in adding a new feature to Codewars, you may do so here. Please be sure to check that it hasn't been logged already.
+
+
+## How to contribute to docs
+
+The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the wiki instead.
