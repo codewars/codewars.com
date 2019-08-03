@@ -1,5 +1,4 @@
-codewars.com
-============
+# codewars.com
 
 [![Join the chat at https://gitter.im/Codewars/codewars.com](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Codewars/codewars.com?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -11,7 +10,6 @@ If the issue is related specifically to the execution of code (Test Frameworks, 
 
 If you are looking to express an interest in adding a new feature to Codewars, you may do so here. Please be sure to check that it hasn't been logged already.
 
-
 ## How to contribute to docs
 
-The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the wiki instead.
+The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the [wiki](wiki/) instead.
