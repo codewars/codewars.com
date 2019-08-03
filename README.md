@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/Codewars/codewars.com](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Codewars/codewars.com?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A public repository for [codewars.com](https://www.codewars.com/), where [issues](issues/) can be tracked and [wiki](wiki/) documentation can be contributed to.
+A public repository for [codewars.com](https://www.codewars.com/), where [issues](https://github.com/Codewars/codewars.com/issues) can be tracked and [wiki](https://github.com/Codewars/codewars.com/wiki ) documentation can be contributed to.
 
 ## When to log an issue
 
@@ -12,4 +12,4 @@ If you are looking to express an interest in adding a new feature to Codewars, y
 
 ## How to contribute to docs
 
-The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the [wiki](wiki/) instead.
+The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the [wiki](https://github.com/Codewars/codewars.com/wiki ) instead.
