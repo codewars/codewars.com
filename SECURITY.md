@@ -13,3 +13,4 @@ We appreciate your efforts and responsible disclosure.
 The following individuals have privately disclosed one or more security vulnerabilities and worked with us to remediate the issue.
 
 - [Alex Alvarado](https://github.com/seisvelas) (<https://www.codewars.com/users/seisvelas>)
+- [Shiraz Ali Khan](https://www.linkedin.com/in/shiraz-ali-khan-1ba508180)
