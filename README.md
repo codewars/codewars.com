@@ -12,4 +12,4 @@ If you are looking to express an interest in adding a new feature to Codewars, y
 
 ## How to contribute to docs
 
-The Codewars documentation is currently powered by the Github Wiki system. This is a temporary system until the new documentation system is fully fleshed out. For now you should ignore the `docs` folder within this repository and contribute directly to the [wiki](https://github.com/Codewars/codewars.com/wiki) instead.
+The new documentaion is being worked on at: https://github.com/codewars/docs

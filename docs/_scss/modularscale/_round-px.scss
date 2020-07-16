@@ -1,9 +1,0 @@
-// No reason to have decimal pixel values,
-// normalize them to whole numbers.
-
-@function ms-round-px($r) {
-  @if unit($r) == 'px' {
-    @return round($r);
-  }
-  @return $r;
-}
