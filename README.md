@@ -6,7 +6,7 @@ Issue tracker and [wiki] for [codewars.com].
 
 ## Reporting Issues
 
-Please report issues about [codewars.com] here.
+Please report issues about [codewars.com] here.  
 Any code execution issues and requests should go to [codewars/runner][runner].
 
 ## Contributing
