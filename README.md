@@ -2,14 +2,25 @@
 
 [![Join the chat at https://gitter.im/Codewars/codewars.com](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Codewars/codewars.com?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A public repository for [codewars.com](https://www.codewars.com/), where [issues](https://github.com/Codewars/codewars.com/issues) can be tracked and [wiki](https://github.com/Codewars/codewars.com/wiki) documentation can be contributed to.
+Issue tracker and [wiki] for [codewars.com].
 
-## When to log an issue
+## Reporting Issues
 
-If the issue is related specifically to the execution of code (Test Frameworks, test output, etc) then a better place to log would be within the [Codewars Runner CLI repository](https://github.com/Codewars/codewars-runner-cli/issues).
+Please report issues about [codewars.com] here.
+Any code execution issues and requests should go to [codewars/runner][runner].
 
-If you are looking to express an interest in adding a new feature to Codewars, you may do so here. Please be sure to check that it hasn't been logged already.
+## Contributing
 
-## How to contribute to docs
+Contributions are welcomed!
 
-The new documentaion is being worked on at: https://github.com/codewars/docs
+Please look at the following places:
+
+- [codewars/runner][runner] to contribute to the code runner
+- [codewars/docs][docs] to contribue to our new documentation
+
+Feel free to open issues to ask us if you'd like to contribute in any other ways.
+
+[codewars.com]: https://www.codewars.com
+[wiki]: https://github.com/Codewars/codewars.com/wiki
+[runner]: https://github.com/codewars/runner
+[docs]: https://github.com/codewars/docs
