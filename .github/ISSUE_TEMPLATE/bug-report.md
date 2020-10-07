@@ -1,34 +1,30 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug
+title: '[short description of the bug]'
+labels: ''
+assignees: ''
 
 ---
 
-#### Describe the bug
+**Describe the bug**
 A clear and concise description of what the bug is.
 
-#### To Reproduce
+**To Reproduce**
+Provide code to reproduce the behavior or a link to Kumite.
 
-Steps to reproduce the behavior:
-
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-#### Expected Behavior
-
+**Expected behavior**
 A clear and concise description of what you expected to happen.
 
-#### Screenshots
-
+**Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-#### Contexts
+**Browser**
+If applicable, please provide your browser information.
 
-Please complete the following information:
-
-- Codewars username (if account related): [e.g., jhoffner]
 - OS: [e.g. macOS]
-- Browser: [e.g. chrome, safari]
-- Browser Version: [e.g. 22]
+- Browser [e.g. chrome, firefox, safari]
+- Version [e.g. 22]
+
+**Additional context**
+Add any other context about the problem here.
