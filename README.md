@@ -2,7 +2,7 @@
 
 [![Discord chat](https://img.shields.io/discord/846624424199061524.svg?logo=discord&style=flat)](https://discord.gg/7U9t33jrgG)
 
-Issue tracker and [wiki] for [codewars.com].
+Issue tracker for [codewars.com].
 
 ## Reporting Issues
 
@@ -21,6 +21,5 @@ Please look at the following places:
 Feel free to open issues to ask us if you'd like to contribute in any other ways.
 
 [codewars.com]: https://www.codewars.com
-[wiki]: https://github.com/Codewars/codewars.com/wiki
 [runner]: https://github.com/codewars/runner
 [docs]: https://github.com/codewars/docs
