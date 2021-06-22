@@ -1,6 +1,6 @@
 # codewars.com
 
-[![Discord chat](https://img.shields.io/discord/846624424199061524.svg?logo=discord&style=flat)](https://discord.gg/7U9t33jrgG)
+[![Discord chat](https://img.shields.io/discord/846624424199061524.svg?logo=discord&style=flat)](https://discord.gg/mSwJWRvkHA)
 
 Issue tracker for [codewars.com].
 
