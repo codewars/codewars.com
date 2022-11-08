@@ -16,7 +16,7 @@ Contributions are welcomed!
 Please look at the following places:
 
 - [codewars/runner][runner] to contribute to the code runner
-- [codewars/docs][docs] to contribue to our new documentation
+- [codewars/docs][docs] to contribute to our new documentation
 
 Feel free to open issues to ask us if you'd like to contribute in any other ways.
 
